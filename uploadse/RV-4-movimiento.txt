@@ -1,0 +1,45 @@
+
+public class juego
+{
+    public String[] jugadas = new String[4];   //arreglo para guardar 4 palabras
+    public void agregar_movimiento(String a){
+        boolean agregar=false;
+        int i=0;
+        while(!agregar && i<4){  //rrecorre el arreglo buscando espacios vacios
+            if(jugadas[i]==null){ //si la posicion del arreglo es espacio vacio 
+                if(a.equals("texto") || a.equals("derecha")|| a.equals("izquierda")|| a.equals("abajo")|| a.equals("arriba")){ //verifica si la palabra esta en el diccionario
+                    jugadas[i]=a; //agrega jugada al arreglo
+                }
+                 agregar=true; //se agrego una jugada
+            }
+            i++;
+        }
+        if(lleno()){   //si el arreglo esta lleno de movimientos
+            realizar_jugadas();   //realizar las jugadas
+            vaciar_jugadas();     //vaciar arreglo
+        }
+    }
+    //verifica si el arreglo esta lleno
+    public boolean lleno(){
+        for(int i=0;i<4;i++){
+            if(jugadas[i]==null){
+                return false;
+            }
+        }
+        return true;
+    }
+    //realiza los movimientos uno por uno
+    public void realizar_jugadas(){
+        for(int i=0;i<4;i++){
+            System.out.println(jugadas[i]);
+            try{Thread.sleep(600);}
+            catch(InterruptedException e){}
+        }
+    }
+    //vacia el arreglo
+    public void vaciar_jugadas(){
+        for(int i=0;i<4;i++){
+            jugadas[i]=null;
+        }
+    }
+}
