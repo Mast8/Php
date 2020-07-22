@@ -2,11 +2,14 @@
     <title>Estudiante</title>
         <meta http-equiv="Content-Type" content="text/html; charset=uft-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link rel="stylesheet" type="text/css" href="../css/bootstrap/bootstrap.min.css">
+    <!-- Buttons and more -->
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap/bootstrap.css">
 
     <!-- bootstrap -->
-    <link href="../administrador/css/bootstrap/bootstrap.css" rel="stylesheet" />
+    <!-- <link href="../administrador/css/bootstrap/bootstrap.css" rel="stylesheet" />  -->
+
+
+    
     <link href="../administrador/css/bootstrap/bootstrap-overrides.css" type="text/css" rel="stylesheet" />
 
     <!-- libraries -->
@@ -16,7 +19,7 @@
     <link href="../administrador/css/lib/select2.css" type="text/css" rel="stylesheet" />
     <link href="../administrador/css/lib/bootstrap.datepicker.css" type="text/css" rel="stylesheet" />
 
-    <!-- global styles -->
+    <!-- navbar global styles -->
     <link rel="stylesheet" type="text/css" href="../administrador/css/compiled/layout.css" />
     <link rel="stylesheet" type="text/css" href="../administrador/css/compiled/elements.css" />
     <link rel="stylesheet" type="text/css" href="../administrador/css/compiled/icons.css" />
@@ -25,8 +28,6 @@
     <link rel="stylesheet" href="../administrador/css/compiled/index.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="../administrador/css/compiled/form-showcase.css" type="text/css" media="screen" />
 
-    <!-- open sans font -->
-    <link href='http://fonts.googleapis.com/css?family=OpenSans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css' />
 
     <!-- lato font -->
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css' />

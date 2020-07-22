@@ -18,7 +18,7 @@
 
         <form action="subirdescar.php" method="post" enctype="multipart/form-data" >
           <h3>Subir archivo</h3>
-          <input type="file" name="myfile"><br>
+          <input type="file" name="myfile" required ><br>
           <p></p>
           
           <p></p>
@@ -30,7 +30,7 @@
           <p></p>
           
           <div class="row">
-            <div class="col-xs-4 col-xs-offset-4">
+            <div class="col-xs-8 col-xs-offset-2">
               <button type="submit" name="save" class="btn btn-success btn-block" >Subir</button>
             </div>
           </div>

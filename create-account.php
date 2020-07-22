@@ -19,6 +19,7 @@
 	//include 'email/email.php';
 
 	// Consulta para comprobar si el correo electrónico ya existe.
+	
 	$checkEmail = "SELECT * FROM usuario WHERE CORREO = '$_POST[email]' ";
 	// Variable $result hold the connection data and the query
 	$result = $conn-> query($checkEmail);
@@ -27,7 +28,8 @@
 
 	// If count == 1 that means the email is already on the database
 	if ($count == 1) {
-		print "<script>alert(\"Ese correo ya esta registrado.\");window.location='registro.php';</script>";
+		header("location: registro.php?error=The email is already in use");
+		//print "<script>alert(\"Ese correo ya esta registrado.\");window.location='registro.php';</script>";
 	} else {
 	/*
 		Si el correo electrónico no existe, los datos del formulario se envían a la

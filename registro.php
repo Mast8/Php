@@ -11,14 +11,16 @@
     <link rel="stylesheet" href="css/sweetalert.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/arsm.css">
+    <link rel="stylesheet" href="css/styles.css">
 
 
-   <script src="js/jquery.js"></script>
+    <script src="js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/sweetalert.min.js"></script>
     <script src="js/operaciones.js"></script>
     <title>Registrar usuario</title>
 </head>
+
 <body>
 <nav class="navbar navbar-inverse" style="margin: 0; font-size:16px;">
 		  <div class="container-fluid">
@@ -45,18 +47,19 @@
 			            <!--<li><a href="#" class="disable center">ayuda</a></li>-->
 			          </ul>
 			        </li>
-		    		<li class="dropdown"><a href="index.php">Inicio</a></li>
+            <li class="dropdown"><a href="index.php">Inicio</a></li>
+            
 		    		<?php
-                                   if(!empty($_SESSION)){
-                                       if(!empty($_SESSION[id_rol])){ header('Location: administrador/dashboard.php'); }
-                                       if(!empty($_SESSION[id_rolD])){ header('Location: docente/dashboard.php'); }
-                                       if(!empty($_SESSION[id_rolA])){ header('Location: auxiliar/dashboard.php'); }
-                                       if(!empty($_SESSION[id_rolE])){ header('Location: estudiante/dashboard.php'); }
-                                   }else{
-                                       echo '<li><a href="login.php">Login</a></li>';
-                                       echo '<li><a href="registro.php">Registro</a></li>';
-                                   }
-                                ?>
+                if(!empty($_SESSION)){
+                    if(!empty($_SESSION[id_rol])){ header('Location: administrador/dashboard.php'); }
+                    if(!empty($_SESSION[id_rolD])){ header('Location: docente/dashboard.php'); }
+                    if(!empty($_SESSION[id_rolA])){ header('Location: auxiliar/dashboard.php'); }
+                    if(!empty($_SESSION[id_rolE])){ header('Location: estudiante/dashboard.php'); }
+                }else{
+                    echo '<li><a href="login.php">Login</a></li>';
+                    echo '<li><a href="registro.php">Registro</a></li>';
+                }
+            ?>
 		   	        
 		      </ul>
 		    </div><!-- /.navbar-collapse -->
@@ -73,41 +76,43 @@
     
   <fieldset>
 
-            <legend class="center">Registro</legend>
-    
+    <legend class="center">Registro</legend>
+    <?php if(isset($_GET['error'])) { ?>             
+              <p class="error" id="email_error"> <?php echo $_GET['error']; ?> </p> 
+    <?php } ?>
+
     <form method="post" action="create-account.php" method="POST">
       
       <label class="sr-only" for="user">Nombres</label> 
       <div class="input-group">
-              <div class="input-group-addon"><i class="fa fa-user"></i> <span> *</span></div>
-              <input type="text" class="form-control" name="name" placeholder="Nombre Completo"required> 
-            </div>
+        <div class="input-group-addon"><i class="fa fa-user"></i> <span> *</span></div>
+        <input type="text" class="form-control" name="name" placeholder="Nombre Completo"> 
+      </div>
 
       <!-- Div espaciador -->
-            <div class="spacing-2"></div>
+      <div class="spacing-2"></div>
 
-
-         <label class="sr-only" for="user">Apellidos</label>
+      <label class="sr-only" for="user">Apellidos</label>
       <div class="input-group">
-              <div class="input-group-addon"><i class="fa fa-user"></i>    <span> *</span></div>
-              <input type="text" class="form-control" name="apellidos" placeholder="Apellidos"required>
-            </div>
+        <div class="input-group-addon"><i class="fa fa-user"></i>    <span> *</span></div>
+        <input type="text" class="form-control" name="apellidos" placeholder="Apellidos">
+      </div>
       <!-- Div espaciador -->
-            <div class="spacing-2"></div>
+      <div class="spacing-2"></div>
              
 
-             <label class="sr-only" for="user">Direccion</label>
+      <label class="sr-only" for="user">Direccion</label>
       <div class="input-group">
-              <div class="input-group-addon"><i class="fa fa-user"></i> <span> *</span></div>
-              <input type="text" class="form-control" name="direccion" placeholder="Direccion"required>
-            </div>
+        <div class="input-group-addon"><i class="fa fa-user"></i> <span> *</span></div>
+        <input type="text" class="form-control" name="direccion" placeholder="Direccion">
+      </div>
       <!-- Div espaciador -->
             <div class="spacing-2"></div>
 
             <label class="sr-only" for="user">Telefono</label>
       <div class="input-group">
               <div class="input-group-addon"><i class="fa fa-bug"></i> <span> *</span></div>
-              <input type="text" class="form-control" name="telefono" placeholder="Telefono"required>
+              <input type="text" class="form-control" name="telefono" placeholder="Telefono">
             </div>
       <!-- Div espaciador -->
             
@@ -117,14 +122,14 @@
           <label class="sr-only" for="email">Correo Electronico</label>
             <div class="input-group">
               <div class="input-group-addon"><i class="fa fa-envelope"> <span> *</span></i></div>
-              <input type="text" class="form-control" name="email" placeholder="Correo Electronico"required>
+              <input type="text" class="form-control" name="email" placeholder="Correo Electronico">
             </div>
               <!-- Div espaciador -->
             <div class="spacing-2"></div>
             <label class="sr-only" for="user">Codigo sis</label>
             <div class="input-group">
               <div class="input-group-addon"><i class="fa fa-bug"></i> <span> *</span></div>
-              <input type="text" class="form-control" name="csis" placeholder="Codigo sis"required>
+              <input type="text" class="form-control" name="csis" placeholder="Codigo sis">
             </div>
              <div class="spacing-2"></div>
              
@@ -132,7 +137,7 @@
             <label class="sr-only" for="clave">Contraseña</label>
             <div class="input-group">
               <div class="input-group-addon"><i class="fa fa-lock"> <span>*</span></i></div>
-              <input type="password" autocomplete="off" class="form-control" name="password" placeholder="Contraseña" required>
+              <input type="password" autocomplete="off" class="form-control" name="password" placeholder="Contraseña" >
             </div>
             <div class="spacing-2"></div>
 
@@ -149,16 +154,16 @@
 
             <div class="spacing-2"></div>
 
-            <label class="sr-only" for="Cbousuario">Tipo:</label>
-            <div class="input-group">
-              <div class="input-group-addon" style="visibility:hidden" ><i class="fa fa-users"></i></div>
+            <!-- <label class="sr-only" for="Cbousuario">Tipo:</label> -->
+            <!-- <div class="input-group"> -->
+              <!-- <div class="input-group-addon" style="visibility:hidden" ><i class="fa fa-users"></i></div> -->
 
               <select name="Cbousuario" style="visibility:hidden" class="form-control"  placeholder="Tipo">
                 <option value="4">Estudiante</option>
               </select> 
-            </div>
+            <!-- </div> -->
 
-            <div style="color:  #0000ff;">Los campos con * son requeridos.</div>
+            <div class="advice">Los campos con * son requeridos.</div>
 
             <div class="row">
               <div class="col-xs-8 col-xs-offset-2">

@@ -58,6 +58,29 @@ table tbody tr:last-of-type {
 	border-bottom: 2px solid #242a46;
 }
 
+/* Buttons */
+.btnp i {
+	border-radius: 20px;
+	color: rgb(88, 11, 11);
+	background-color: #337ab7;
+	border-color: #2e6da4;
+	border: 1px solid transparent;
+	padding: 15px 32px;
+	font-size: 15px;
+  }
+  .btnp:focus,
+  .btnp.focus {
+	color: #fff;
+	background-color: #286090;
+	border-color: #122b40;
+  }
+  .btnp:hover {
+	color: rgb(25, 15, 116);
+	background-color: #063157;
+	border-color: #0d2942;
+  }
+
+
 @media(max-width: 500px){
 	table thead {
 		display: none;

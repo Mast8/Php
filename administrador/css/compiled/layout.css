@@ -336,10 +336,15 @@ input.search {
         display: block;
         margin-bottom: 7px; }
         #sidebar-nav #dashboard-menu ul.submenu a:hover {
-          text-decoration: underline; }
+          text-decoration: underline; 
+          color: #4c535a;
+          font-size: 3rem;
+          font-style: italic;
+        }
         #sidebar-nav #dashboard-menu ul.submenu a.active {
           font-weight: bold;
-          text-shadow: none; }
+          text-shadow: none; 
+        }
 
 #pad-wrapper {
   padding: 0px 50px;

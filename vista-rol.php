@@ -2,6 +2,7 @@
 session_start();
 include 'geters.php';
 include 'funsest.php';
+include 'validator.php';
 ?>
 
 <!doctype html>
@@ -23,13 +24,6 @@ include 'funsest.php';
 			// Connection info. file
 			include 'conn.php';	
 			
-			// Connection variables
-			$conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
-
-			// Check connection
-			if (!$conn) {
-				die("Connection failed: " . mysqli_connect_error());
-			}
 			
 			// data sent from form login
 			$email = $_POST['email']; 
@@ -41,6 +35,12 @@ include 'funsest.php';
 			// Variable $row hold the result of the query
 			$row = mysqli_fetch_assoc($result);
 			
+			//if(vacio($email,"email") || vacio($contra, "password"))
+			
+			// if(empty($email)) {
+			// 	header("Location: login.php?error=El email es requerido");
+			// 	exit();
+			// }
 				$hash = $row['PASSWORD'];
 				$idrol = $row['ID_ROL'];
 				$idus = $row['ID_USUARIO'];
@@ -111,7 +111,7 @@ include 'funsest.php';
 					}
 				}else{
 					//echo 'No son iguales las contrasenas';
-					print "<script>alert(\"Correo o contrasena equivocada.\");window.location='index.php';</script>";
+					header('Location: login.php?error=Wrong email or password"');
 				}
 
 			?>

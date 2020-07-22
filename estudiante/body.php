@@ -46,7 +46,7 @@
 
                  <li>
                 <a class="dropdown-toggle" href="#">
-                    <i class="icon-group"></i>
+                    <i class="icon-laptop"></i>
                     <span>Portafolio</span>
                     <i class="icon-chevron-down"></i>
                 </a>
@@ -58,7 +58,7 @@
                    
             <li> 
                 <a class="dropdown-toggle" href="#">
-                    <i class="icon-group"></i>
+                    <i class="icon-book"></i>
                     <span>Materias</span>
                     <i class="icon-chevron-down"></i>
                 </a>
@@ -74,7 +74,7 @@
 
             <li> 
                 <a class="dropdown-toggle" href="#">
-                    <i class="icon-group"></i>
+                    <i class="icon-print"></i>
                     <span>Reportes</span>
                     <i class="icon-chevron-down"></i>
                 </a>
@@ -91,7 +91,6 @@
     
     <!-- scripts -->
     <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="js/wysihtml5-0.3.0.js"></script>
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/bootstrap.datepicker.js"></script>

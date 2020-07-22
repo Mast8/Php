@@ -1,3 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.css";
 @import "~font-awesome/css/font-awesome.css";
+
+.error {
+    background: #f2dede;
+    color: #194442;
+    padding: 1rem;
+    text-align: center;
+    text-decoration: bold;
+    /* width: 20%; */
+    border-radius: 5px;
+}
+
+.advice {
+    padding: 1rem;
+    text-align: center;
+    color:  #0000ff;
+}
+
+
+
+/* #email_error {
+    background: #f2dede;
+    color: #194442;
+    padding: 1rem;
+    text-align: center;
+    text-decoration: bold;
+    
+    border-radius: 5px;
+} 

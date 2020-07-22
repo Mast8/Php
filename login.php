@@ -15,14 +15,14 @@
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/sweetalert.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/arsm.css">
 
 
-   <script src="js/jquery.js"></script>
+    <script src="js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/sweetalert.min.js"></script>
     <script src="js/operaciones.js"></script>
-	<title>inicar sesion</title>
   </head>
 
   <body>
@@ -79,16 +79,23 @@
           <fieldset>
 
             <legend class="center">Login</legend>
+
+            <?php if(isset($_GET['error'])) { ?>             
+              <p class="error" id="email_error"> <?php echo $_GET['error']; ?> </p> 
+            <?php } ?>
+
             <!-- vewrifica conexion y si existe entonces te redirecciona-->
-            <form action="vista-rol.php" method="POST"> 
+            <form action="vista-rol.php" method="POST" onsubmit="return Validate()" name="vform"> 
+            <!-- <form action="vista-rol.php" method="POST">  -->
              <!--fin -->
             <!-- Caja de texto para usuario -->
             <label class="sr-only" for="user">Usuario</label>
             <div class="input-group">
               <div class="input-group-addon"><i class="fa fa-user"></i>  <span>*</span></div>
               <!--<input type="text" class="form-control" id="user" placeholder="Ingresa tu correo">-->
-              <input type="email" class="form-control" name="email" placeholder="Ingrese su correo"> 
+              <input type="email" class="form-control" name="email" placeholder="Ingrese su correo">
             </div>
+            <div id="email_erro"></div> 
 
             <!-- Div espaciador -->
             <div class="spacing-2"></div>
@@ -97,12 +104,11 @@
             <label class="sr-only" for="clave">Contraseña</label>
             <div class="input-group">
               <div class="input-group-addon"><i class="fa fa-lock"></i>  <span>*</span></div>
-             
-              <input type="password" class="form-control " name="password" placeholder="Ingrese su password" required>
+              <input type="password" class="form-control " name="password" placeholder="Ingrese su password" >
             </div>
-
+            <div id="pass_error"></div> 
                   
-             <div style="color:  #0000ff;">Los campos con * son requeridos.</div>
+             <div class="advice">Los campos con * son requeridos.</div>
             <!--  )-->
            
 
@@ -131,6 +137,7 @@
 
     <!-- / Final Formulario login -->
 
-    
+    <script src="js/validate.js"> </script>
   </body>
 </html> 
+
